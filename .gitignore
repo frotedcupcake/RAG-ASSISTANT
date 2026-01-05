@@ -1,0 +1,15 @@
+models/
+*.gguf
+*.bin
+*.pt
+*.ckpt
+
+db/
+
+__pycache__/
+*.pyc
+
+venv/
+.env/
+
+.DS_Store
