@@ -1,0 +1,42 @@
+[
+  {
+    "query": "what is convolution",
+    "expected_keywords": ["overlap", "shift", "sliding", "signal", "operation"],
+    "type": "definition"
+  },
+  {
+    "query": "what is a discrete time signal",
+    "expected_keywords": ["samples", "discrete", "indexed", "time instants"],
+    "type": "definition"
+  },
+  {
+    "query": "what is a continuous time signal",
+    "expected_keywords": ["continuous", "defined", "all time"],
+    "type": "definition"
+  },
+  {
+    "query": "what is an lti system",
+    "expected_keywords": ["linear", "time invariant", "superposition", "shift"],
+    "type": "definition"
+  },
+  {
+    "query": "what is impulse response",
+    "expected_keywords": ["response", "impulse", "characterizes", "system"],
+    "type": "definition"
+  },
+  {
+    "query": "what is sampling theorem",
+    "expected_keywords": ["bandlimited", "reconstruction", "sampling rate", "nyquist"],
+    "type": "theorem"
+  },
+  {
+    "query": "what is fourier transform",
+    "expected_keywords": ["frequency", "spectrum", "representation"],
+    "type": "definition"
+  },
+  {
+    "query": "what is unit step signal",
+    "expected_keywords": ["zero", "positive time", "u(t)", "causal"],
+    "type": "definition"
+  }
+]
