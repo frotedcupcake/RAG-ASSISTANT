@@ -6,37 +6,38 @@ llm = Llama(
     n_threads=6
 )
 
-SYSTEM_PROMPT = """
-You are an academic assistant. Use ONLY the provided context.
-Do not hallucinate. If the answer is unclear, say so.
-
-Explain the concept clearly:
-• 1–2 line definition
-• short intuition
-• optional formal statement
-
-Cite page numbers when present.
-"""
-
 def generate_answer(query, context):
+    """
+    Strict RAG answer generation.
+    The model is forbidden from using prior knowledge.
+    """
 
     prompt = f"""
-{SYSTEM_PROMPT}
+You are a retrieval-augmented assistant.
 
-Question:
-{query}
+STRICT RULES:
+- You MUST answer ONLY using the information in CONTEXT.
+- You MUST NOT use prior knowledge.
+- You MUST NOT guess or infer beyond the text.
+- If the CONTEXT does not clearly contain the answer,
+  respond EXACTLY with:
 
-Context:
+"The provided documents do not contain this information."
+
+CONTEXT:
 {context}
 
-Answer:
+QUESTION:
+{query}
+
+ANSWER:
 """
 
     response = llm(
         prompt,
-        max_tokens=400,
+        max_tokens=256,
         temperature=0.2,
-        top_p=0.95
+        stop=["</s>"]
     )
 
     return response["choices"][0]["text"].strip()
