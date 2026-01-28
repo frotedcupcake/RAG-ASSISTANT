@@ -1,0 +1,62 @@
+{
+  "answer": "An LTI (Linear Time-Invariant) system is a type of system described in the context of signals and systems. It is a system that preserves the superposition principle and time invariance. The superposition principle states that the response of the system to the sum of two inputs is the sum of the responses to each input separately. Time invariance states that the response of the system to a given input does not change over time.",
+  "grounded": true,
+  "refusal_reason": null,
+  "latency": {
+    "retrieval": 0.642,
+    "reranking": 0.001,
+    "generation": 36.71
+  },
+  "retrieved_chunks": [
+    {
+      "text": "42 Signals and Systems Input System 1 System 2 Output (a) Output (b) System 1 Input~ System 4 System 3 (c) Figure 1.42 Interconnection of two systems: (a) series (cascade) intercon­ nection; (b) parallel interconnection; (c) series-parallel interconnection. Chap. 1 Output systems and of how they are interconnected in order to analyze the operation and behavior of the overall system. In addition, by describing a system in terms of an interconnection of simpler subsystems, we may in fact be able t",
+      "score": 0.9412621855735779,
+      "heading": "Unknown Section",
+      "page": 73
+    },
+    {
+      "text": "Sec. 1.5 Continuous-Time and Discrete-Time Systems 43 Figure 1 .43 Feedback interconnec- tion. to obtain more complicated interconnections. An example of such an interconnection is given in Figure 1.42(c).4 Another important type of system interconnection is a feedback interconnection, an example of which is illustrated in Figure 1.43. Here, the output of System 1 is the input to System 2, while the output of System 2 is fed back and added to the external input to pro­ duce the actual input to S",
+      "score": 1.0683079957962036,
+      "heading": "Unknown Section",
+      "page": 74
+    },
+    {
+      "text": "xvii PREFACE T his book is the second edition of a text designed for undergraduate courses in signals and systems. While such courses are frequently found in electrical engineering curricula, the concepts and techniques that form the core of the subject are of fundamental importance in all engineering disciplines. In fact, the scope of potential and actual applications of the methods of signal and system analysis continues to expand as engineers are confronted with new challenges involving the s",
+      "score": 1.1019665002822876,
+      "heading": "Unknown Section",
+      "page": 18
+    },
+    {
+      "text": "Sec. 1.5 Continuous-Time and Discrete-Time Systems 41 As the preceding examples suggest, the mathematical descriptions of systems from a wide variety of applications frequently have a great deal in common, and it is this fact that provides considerable motivation for the development of broadly applicable tools for signal and system analysis. The key to doing this successfully is identifying classes of systems that have two important characteristics: ( 1) The systems in this class have prop­ erti",
+      "score": 1.103777527809143,
+      "heading": "Unknown Section",
+      "page": 72
+    },
+    {
+      "text": "FoREWORD The concepts of signals and systems arise in a wide variety of fields, and the ideas and techniques associated with these concepts play an important role in such diverse areas of science and technology as communications, aeronautics and astronautics, circuit design, acoustics, seismology, biomedical engineering, energy generation and distribution sys­ tems, chemical process control, and speech processing. Although the physical nature of the signals and systems that arise in these variou",
+      "score": 1.1104001998901367,
+      "heading": "Unknown Section",
+      "page": 28
+    }
+  ],
+  "reranked_chunks": [
+    {
+      "text": "ANswERS 931",
+      "score": -3.8306028606492064,
+      "heading": "Unknown Section",
+      "page": 961
+    },
+    {
+      "text": "1 SIGNALS AND SYSTEMS 1.0 INTRODUCTION As described in the Foreword, the intuitive notions of signals and systems arise in a rich va­ riety of contexts. Moreover, as we will see in this book, there is an analytical framework­ that is, a language for describing signals and systems and an extremely powerful set of tools for analyzing them-that applies equally well to problems in many fields. In this chapter, we begin our development of the analytical framework for signals and systems by intro­ duc",
+      "score": -7.503500309168447,
+      "heading": "Unknown Section",
+      "page": 32
+    },
+    {
+      "text": "Sec. 7.1 Representation of a Continuous-Time Signal by Its Samples: The Sampling Theorem 51 s convert a continuous-time signal to a discrete-time signal, process the discrete-time signal using a discrete-time system, and then convert back to continuous time. In the following discussion, we introduce and develop the concept of sampling and the process of reconstructing a continuous-time signal from its samples. In this discus­ sion, we both identify the conditions under which a continuous-time si",
+      "score": -7.653107800509703,
+      "heading": "Unknown Section",
+      "page": 546
+    }
+  ]
+}
