@@ -1,15 +1,16 @@
+from config.settings import settings
 from llama_cpp import Llama
 
 llm = Llama(
-    model_path="/Users/adityasachan/Documents/rag-assistant/models/mistral-7b-instruct-v0.2.Q4_K_M.gguf",
-    n_ctx=4096,
-    n_threads=6
+    model_path=settings.model_path,
+    n_ctx=settings.llm_n_ctx,
+    n_threads=settings.llm_n_threads,
 )
 
 response = llm(
-    "Explain discete signals in one sentence.",
+    "Explain discrete signals in one sentence.",
     max_tokens=150,
-    temperature=0.3
+    temperature=0.3,
 )
 
 print(response["choices"][0]["text"])

@@ -55,9 +55,10 @@ def is_grounded(query, ranked_chunks, top_k=3):
     # -----------------------------
     # Thresholds (tunable)
     # -----------------------------
-    MIN_CHARS = 400
-    MIN_SCORE = 0.15
-    MIN_OVERLAP = 0.15
+    from config.settings import settings
+    MIN_CHARS = settings.grounding_min_chars
+    MIN_SCORE = settings.grounding_min_score
+    MIN_OVERLAP = settings.grounding_min_overlap
 
     passes = [
         total_chars >= MIN_CHARS,

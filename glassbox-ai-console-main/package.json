@@ -4,13 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev:frontend": "vite",
-  "dev:backend": "cd .. && python3 -m uvicorn api:app --reload --port 8000",
-  "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
-  "build": "vite build",
-  "preview": "vite preview"
-}
-,
+    "dev:frontend": "vite",
+    "dev:backend": "cd .. && python3 -m uvicorn api:app --reload --port 8000",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",
@@ -72,6 +71,7 @@
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react-swc": "^3.11.0",
     "autoprefixer": "^10.4.21",
+    "concurrently": "^10.0.0",
     "eslint": "^9.32.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
@@ -85,5 +85,4 @@
     "vite": "^5.4.19",
     "vitest": "^3.2.4"
   }
-  
 }

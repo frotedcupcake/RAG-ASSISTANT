@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+chromadb
+sentence-transformers
+llama-cpp-python
+pypdf
+python-docx
+requests
+beautifulsoup4
+numpy
+pydantic
+pydantic-settings
+loguru

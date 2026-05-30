@@ -20,3 +20,9 @@ vector_store/
 *.faiss
 *.index
 .DS_Store
+ai_context/
+logs/
+repomix-output.xml
+.env
+node_modules/
+models/
