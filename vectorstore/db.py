@@ -37,7 +37,8 @@ def sanitize_metadata(md):
 
 def add_chunks(docs, embeddings, batch_size=800):
 
-    ids = [str(i) for i in range(len(docs))]
+    offset = collection.count()
+    ids = [str(offset + i) for i in range(len(docs))]
 
     for i in range(0, len(docs), batch_size):
 

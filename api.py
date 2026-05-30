@@ -1,14 +1,14 @@
 import time
-from typing import List, Dict, Any
-
+from typing import List, Dict, Any, Optional
+from config.logging_config import log
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
+from config.settings import settings
 from retrieval.hybrid_retriever import hybrid_retrieve
 from retrieval.reranker import rerank
 from pipeline.generator_llm import generate_answer
-from typing import Optional
 
 
 # -----------------------------------
@@ -27,10 +27,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:8080",   # Next.js / Lovable
-        "http://localhost:5173",   # Vite (optional)
-    ],
+    allow_origins=settings.frontend_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -55,7 +52,6 @@ class AskResponse(BaseModel):
     answer: str
     grounded: bool
     refusal_reason: Optional[str]
-
     latency: Dict[str, float]
     retrieved_chunks: List[ChunkDebug]
     reranked_chunks: List[ChunkDebug]
@@ -66,22 +62,14 @@ class AskResponse(BaseModel):
 # -----------------------------------
 
 def build_context(ranked_chunks, max_chunks: int = 3) -> str:
-    """
-    Merge top-k reranked chunks into a single context block
-    """
     return "\n\n".join(text for text, _, _ in ranked_chunks[:max_chunks])
 
 
 def context_is_strong(ranked_chunks, context_text: str) -> bool:
-    """
-    Conservative grounding check
-    """
     if not ranked_chunks:
         return False
-
     if len(context_text.strip()) < 300:
         return False
-
     return True
 
 
@@ -161,7 +149,7 @@ def ask(req: QueryRequest):
     t2 = time.time()
     answer = generate_answer(req.question, context)
     timings["generation"] = round(time.time() - t2, 3)
-
+    log.info(f"POST /ask | total={sum(timings.values()):.2f}s | query='{req.question[:50]}'")
     return AskResponse(
         answer=answer,
         grounded=True,

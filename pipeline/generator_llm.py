@@ -1,10 +1,10 @@
-from llama_cpp import Llama
 
-llm = Llama(
-    model_path="/Users/adityasachan/Documents/rag-assistant/models/mistral-7b-instruct-v0.2.Q4_K_M.gguf",
-    n_ctx=4096,
-    n_threads=6
-)
+from llama_cpp import Llama
+from config.settings import settings
+from config.logging_config import log
+
+llm = Llama(model_path=settings.model_path, n_ctx=settings.llm_n_ctx, n_threads=settings.llm_n_threads)
+
 
 def generate_answer(query, context):
     """
@@ -39,5 +39,5 @@ ANSWER:
         temperature=0.2,
         stop=["</s>"]
     )
-
+    log.info(f"generate | tokens={response['usage']['total_tokens']} | query='{query[:50]}'")
     return response["choices"][0]["text"].strip()
